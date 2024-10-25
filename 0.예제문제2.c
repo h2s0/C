@@ -27,6 +27,7 @@ temp = *pA;
 
 
 
+
 // 사용자로부터 입력받은 정수 n에 대해, 1부터 n까지의 합을 구하고 출력하세요.
 
 int n, i, answer = 0;
@@ -41,8 +42,11 @@ int main () {
     for ( i = 0; i <= n; i++ ) {
         answer += i;
     }
-    printf("%d\n", answer);
+    // printf 함수는 첫 번째 매개변수로 포맷 문자열을 받아 이 포맷 문자열 안에 있는 %로 시작하는 포맷 지정자들을 찾아서, 그 순서대로 뒤에 오는 인자들에 대입한다.
+    // 그러므로 첫 번째 포맷 지정자는 바로 뒤 첫번째인 n, 그 뒤는 answer 을 대입한다.
+    printf("1부터 %d까지의 합: %d\n", n, answer);
 }
+
 
 
 
@@ -53,6 +57,8 @@ int main () {
 
 int arr[4];
 
+
+// 반복문으로 처리할 수 있겠죠? arr의 인덱스를!
 scanf("%d", &arr[0]);
 scanf("%d", &arr[1]);
 scanf("%d", &arr[2]);
@@ -62,15 +68,33 @@ scanf("%d", &arr[4]);
 
 printf("%d\n", arr);
 
+// 정답
+
+int arr[4];
+
+for ( int i = 0; i < 4; i++ ) {
+    printf("값을 입력해주세요.");
+    scanf("%d", &arr[i]);
+}
+
+for ( int i = 0; i < 4; i++ ) {
+    printf("%d", arr[i]);
+}
+
+
+
+
 
 
 
 // 두 개의 실수를 입력받아, 두 실수의 곱을 반환하는 함수 multiply를 작성하세요. 
 // 함수의 결과를 main 함수에서 호출하여 출력하세요.
 
+// 안해도 됨 : ultiply 함수에서 인자로 받아오기 때문에 굳이 전역으로 선언할 필요 X
 float c, d;
 
 int multiply (int c, int d) {
+    
     int result = c * d;
     return result;
 }
@@ -81,6 +105,29 @@ int main () {
     return 0;
 }
 
+// 정답
+
+float multiply2 (float c, float d) {
+    return c * d;
+}
+
+int main() {
+    float c,d;
+
+    printf("2개의 실수를 입력하세요");
+    scanf("%f %f", &c, &d);
+
+    float answer = multiply2(c,d);
+    printf("%f", answer);
+    
+    
+    return 0;
+}
+
+
+
+
+
 
 
 
@@ -88,22 +135,39 @@ int main () {
 // 힌트: if 문을 사용하세요.
 
 int what;
-scanf("%d\n", &what);
 
-int main() {
-    if ( what / 2 === 0 ) {
-        printf("%s\n", "짝수");
-    } else {
-        printf("%s\n", "홀수");
-    }
+printf("정수를 입력하세요.");
+scanf("%d", &what);
+
+if ( what % 2 == 0 ) {
+    printf("짝수\n");
+} else {
+    printf("홀수\n");
 }
 
 
 
 
 
+
+
 // 문자열을 입력받고, 해당 문자열의 길이를 반환하는 함수를 작성하세요. 
-// 힌트: 반복문을 사용하세요.
+
+#include <stdio.h>
+#include <string.h>
+
+char msg[];
+
+printf("메세지를 입력해주세요.");
+scanf("%s\n", &msg);
+
+int main() {
+    int length = strlen(msg);
+    printf("%d", length);
+
+    return 0;
+}
+
 
 
 
@@ -116,6 +180,8 @@ int main() {
 
 
 
+
+
 // 크기가 3인 정수형 배열을 선언하고, 각 배열의 원소에 포인터를 사용해 값을 대입하세요. 
 // 이후 배열의 모든 원소를 출력하세요.
 
@@ -123,8 +189,12 @@ int main() {
 
 
 
+
+
 // 입력받은 정수가 음수이면 "음수입니다."를 출력하고, 양수이면 "양수입니다."를 출력하세요. 
 // 0일 경우에는 "0입니다."를 출력하세요.
+
+
 
 
 
