@@ -177,6 +177,18 @@ int main() {
 // 힌트: 조건문을 사용하세요.
 
 
+#include <stdio.h>
+
+int num1, num2, num3;
+
+printf("정수 3개를 입력해주세요.");
+scanf("%d\n", &num1, &num2, &num3);
+
+int main() {
+
+    
+    printf("%d",);
+}
 
 
 
